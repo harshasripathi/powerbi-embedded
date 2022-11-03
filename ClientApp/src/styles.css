@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.report-container {
+  width: 90%;
+  margin: 8px auto;
+  height: 75vh;
+}
+
+.embedded-wrapper {
+  margin: 20px;
+  padding: 10px;
+}
+
+.log-container {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+  .log-container p {
+    padding: 0;
+    margin: 0;
+  }
+
+    .log-container p::before {
+      content: "> ";
+    }

@@ -1,0 +1,11 @@
+<div>
+    <select (change)="getDashboardConfig($event)">
+        <option value="-1">Select a dashboard</option>
+        <option *ngFor="let dashboard of dashboards" value="{{dashboard.id}}">{{dashboard.displayName}}</option>
+    </select>
+</div>
+
+<div *ngIf="embedConfig.id != undefined">
+    <powerbi-dashboard [embedConfig]="embedConfig" [cssClassName]="reportClass">
+    </powerbi-dashboard>
+</div>
