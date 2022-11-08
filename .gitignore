@@ -230,3 +230,21 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 
+.angular/
+.DS_Store
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/0.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/1.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/2.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/3.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/5.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/6.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/7.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/8.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/9.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/10.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/11.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/12.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/13.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/14.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/index.pack
+ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0a152ded2/index.pack.old

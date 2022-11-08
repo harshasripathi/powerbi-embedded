@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-8">
+                <h5 class="card-title">
+                    Filters
+                </h5>
+            </div>
+            <div class="col-4 float-right">
+                <a href="#" class="float-right" (click)="clear()">clear</a>
+            </div>
+        </div>
+        <div *ngFor="let config of filterConfig" class="form-group filter-container">
+            <label>{{config.column.name}}</label>
+            <select class="form-control" multiple="multiple" (change)="onDropdownChange(config, $event)">
+                <option *ngFor="let column of config.column.values">{{column}}</option>
+            </select>
+        </div>
+    </div>
+</div>

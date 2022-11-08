@@ -1,6 +1,6 @@
 
 <div>
-    <select (change)="getReportConfig($event)">
+    <select class="form-control" (change)="getReportConfig($event)">
         <option value="-1">Select a report</option>
         <option *ngFor="let report of reports" value="{{report.id}}">{{report.name}}</option>
     </select>
@@ -14,7 +14,7 @@
             <powerbi-report [embedConfig]="embedConfig" [phasedEmbedding]="phasedEmbedding" [cssClassName]="reportClass" [eventHandlers]="eventHandlersMap"></powerbi-report>
         </div>
         <div class="col-2">
-            <logs-view [incomingLogs]="dataSelectLogs"></logs-view>
+            <logs-view></logs-view>
         </div>
     </div>
 </div>

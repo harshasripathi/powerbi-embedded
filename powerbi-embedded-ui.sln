@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1703.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "powerbi-embedded-ui", "powerbi-embedded-ui.csproj", "{70CC6775-1689-417E-8B35-440BA63CE42A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestTrigger", "..\RequestTrigger\RequestTrigger.csproj", "{23DD881B-5D2F-4CA9-9CF4-3C01A71419D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{70CC6775-1689-417E-8B35-440BA63CE42A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70CC6775-1689-417E-8B35-440BA63CE42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70CC6775-1689-417E-8B35-440BA63CE42A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23DD881B-5D2F-4CA9-9CF4-3C01A71419D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23DD881B-5D2F-4CA9-9CF4-3C01A71419D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23DD881B-5D2F-4CA9-9CF4-3C01A71419D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23DD881B-5D2F-4CA9-9CF4-3C01A71419D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
