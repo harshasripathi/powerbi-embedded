@@ -1,0 +1,32 @@
+<div>
+  <select class="form-control w-25" (change)="onWorkspaceSelect($event)">
+    <option value="-1">Choose a workspace</option>
+    <option *ngFor="let ws of workspaces" value="{{ ws.id }}">
+      {{ ws.name }}
+    </option>
+  </select>
+</div>
+<div class="mt-5" *ngIf="reports && reports.length > 0">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Report Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reports; let i = index">
+        <td>
+            {{ i + 1 }}
+        </td>
+        <td>
+          {{ report.name }}
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="requestAccess(report.id, report.name)" *ngIf="!isRequested(report.id)">Request Access</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

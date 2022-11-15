@@ -1,0 +1,9 @@
+﻿{
+  "profiles": {
+    "RequestTrigger": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7248",
+      "launchBrowser": false
+    }
+  }
+}
