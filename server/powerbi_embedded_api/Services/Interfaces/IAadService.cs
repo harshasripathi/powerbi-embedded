@@ -1,5 +1,4 @@
-﻿using System;
-namespace powerbi_embedded_api.Services.Interfaces
+﻿namespace powerbi_embedded_api.Services.Interfaces
 {
     public interface IAadService
     {

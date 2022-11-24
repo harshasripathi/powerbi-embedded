@@ -12,8 +12,8 @@ namespace powerbi_embedded_api.Models
     {
         public Guid DashboardId { get; set; }
 
-        public string EmbedUrl { get; set; }
+        public string? EmbedUrl { get; set; }
 
-        public EmbedToken EmbedToken { get; set; }
+        public EmbedToken? EmbedToken { get; set; }
     }
 }

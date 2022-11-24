@@ -13,9 +13,9 @@ namespace powerbi_embedded_api.Models
         public Guid ReportId { get; set; }
 
         // Name of the report
-        public string ReportName { get; set; }
+        public string? ReportName { get; set; }
 
         // Embed URL for the Power BI report
-        public string EmbedUrl { get; set; }
+        public string? EmbedUrl { get; set; }
     }
 }

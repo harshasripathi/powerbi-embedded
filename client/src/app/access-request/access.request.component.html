@@ -18,13 +18,20 @@
     <tbody>
       <tr *ngFor="let report of reports; let i = index">
         <td>
-            {{ i + 1 }}
+          {{ i + 1 }}
         </td>
         <td>
           {{ report.name }}
         </td>
         <td>
-          <button class="btn btn-primary" (click)="requestAccess(report.id, report.name)" *ngIf="!isRequested(report.id)">Request Access</button>
+          <button
+            class="btn btn-primary"
+            (click)="requestAccess(report.id, report.name)"
+            *ngIf="!isRequested(report.id); else pending"
+          >
+            Request Access
+          </button>
+          <ng-template class="" #pending>Pending</ng-template>
         </td>
       </tr>
     </tbody>

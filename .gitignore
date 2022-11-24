@@ -251,3 +251,4 @@ ClientApp/.angular/cache/14.0.3/angular-webpack/2efd9a54840b93a22bdf0b6e288b76c0
 
 server/powerbi_embedded_api/appsettings.json
 .DS_Store
+server/powerbi_embedded_api/appsettings.Development.json

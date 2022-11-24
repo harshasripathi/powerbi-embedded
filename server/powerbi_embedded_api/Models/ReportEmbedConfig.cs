@@ -11,9 +11,9 @@ namespace powerbi_embedded_api.Models
     public class ReportEmbedConfig
     {
         // Report to be embedded
-        public List<EmbedReport> EmbedReports { get; set; }
+        public List<EmbedReport>? EmbedReports { get; set; }
 
         // Embed Token for the Power BI report
-        public EmbedToken EmbedToken { get; set; }
+        public EmbedToken? EmbedToken { get; set; }
     }
 }

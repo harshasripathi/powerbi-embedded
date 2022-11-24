@@ -4,9 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { PowerBIEmbedModule } from 'powerbi-client-angular';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MsalGuard, MsalInterceptor, MsalModule } from '@azure/msal-angular';
-import { PublicClientApplication, InteractionType, BrowserCacheLocation } from '@azure/msal-browser';
+import {
+  PublicClientApplication,
+  InteractionType,
+  BrowserCacheLocation,
+} from '@azure/msal-browser';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -23,7 +27,10 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AccessRequestComponent } from './access-request/access.request.component';
 import { AdminComponent } from './admin/admin.component';
 import { PowerBIService } from './services/powerbi.service';
-import { AdminService } from './services/admin.service';
+import { RequestAccessService } from './services/request.access.service';
+import { AdminAuthGuard } from './auth-guards/admin.auth.guard';
+import { AuthService } from './services/auth.service';
+import { HttpService } from './services/http.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,7 @@ import { AdminService } from './services/admin.service';
     LogsViewComponent,
     SpinnerComponent,
     AccessRequestComponent,
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -45,57 +52,66 @@ import { AdminService } from './services/admin.service';
     PowerBIEmbedModule,
     NgMultiSelectDropDownModule,
     RouterModule.forRoot([
-      {path: '', canActivate: [MsalGuard], children: [
-        { path: '', component: ReportsComponent, pathMatch: 'full' },
-        { path: 'powerbi-reports', component: ReportsComponent },
-        { path: 'request', component: AccessRequestComponent},
-        { path: 'admin', component: AdminComponent }
-      ]}
-    ]),
-    MsalModule.forRoot(new PublicClientApplication(
       {
+        path: '',
+        canActivate: [MsalGuard],
+        children: [
+          { path: '', component: ReportsComponent, pathMatch: 'full' },
+          { path: 'powerbi-reports', component: ReportsComponent },
+          { path: 'request', component: AccessRequestComponent },
+          {
+            path: 'admin',
+            component: AdminComponent,
+            canActivate: [AdminAuthGuard],
+          },
+        ],
+      },
+    ]),
+    MsalModule.forRoot(
+      new PublicClientApplication({
         auth: {
-          clientId: "8318fff9-84ad-4293-ad06-b477af645f65",
+          clientId: '8318fff9-84ad-4293-ad06-b477af645f65',
           authority:
             'https://login.microsoftonline.com/24041256-c834-468a-b7e7-c4dc34322cfe',
-          redirectUri: "/"
+          redirectUri: '/',
         },
         cache: {
           cacheLocation: BrowserCacheLocation.SessionStorage,
           storeAuthStateInCookie: true,
-        }
+        },
       }),
       {
         // MSAL Guard Configuration
         interactionType: InteractionType.Redirect,
         authRequest: {
-            scopes: ['']
+          scopes: [''],
         },
-        loginFailedRoute: '/'
+        loginFailedRoute: '/',
       },
       {
         interactionType: InteractionType.Redirect,
         protectedResourceMap: new Map([
-          [
-            "/api/", ["api://4a193b8b-e8fd-4dcd-9d16-132cba83f3f2/Read.All"]
-          ]
-        ])
-      })
+          ['/api/', ['api://4a193b8b-e8fd-4dcd-9d16-132cba83f3f2/Read.All']],
+        ]),
+      }
+    ),
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,
-      multi: true
+      multi: true,
     },
-    FilterService, 
-    LogService, 
-    AzureService, 
+    FilterService,
+    LogService,
+    AzureService,
     LoaderService,
     PowerBIService,
-    AdminService
+    RequestAccessService,
+    AuthService,
+    HttpService,
+    AdminAuthGuard,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}

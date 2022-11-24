@@ -22,14 +22,24 @@
           {{ i + 1 }}
         </td>
         <td>
-          {{ request.Data.ReportName }}
+          {{ request.ReportName }}
         </td>
         <td>
-          {{ request.UserId }}
+          {{ request.RequestedUserName }}
         </td>
         <td>
-          <button class="btn btn-primary m-1">Approve</button>
-          <button class="btn btn-danger m-1">Reject</button>
+          <button
+            class="btn btn-primary m-1"
+            (click)="approveRequest(request.AccessRequestId)"
+          >
+            Approve
+          </button>
+          <button
+            class="btn btn-danger m-1"
+            (click)="rejectRequest(request.AccessRequestId)"
+          >
+            Reject
+          </button>
         </td>
       </tr>
     </tbody>
