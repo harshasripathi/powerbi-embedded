@@ -21,6 +21,8 @@ import { PowerBIService } from '../services/powerbi.service';
 })
 export class ReportsComponent implements OnInit {
   private readonly workspaceId: string = 'd1da2ed9-25c5-4c94-af56-ed71d65b4945';
+  //'db097125-a738-4629-9a9b-93e6367f921e';
+  //'d1da2ed9-25c5-4c94-af56-ed71d65b4945';
   //"839940d7-ba79-4b1c-bf12-2f48e476acec";
   // Servian //"db097125-a738-4629-9a9b-93e6367f921e";
   public reports: ReportConfig[] = [];
@@ -87,12 +89,13 @@ export class ReportsComponent implements OnInit {
       .subscribe(
         (result: any) => {
           this.loader.setLoading(false);
-          let report = result?.embedReports[0];
+          console.log(result);
+          let report = result?.EmbedReports[0];
           this.embedConfig = {
             ...this.embedConfig,
-            id: report?.reportId,
-            embedUrl: report?.embedUrl,
-            accessToken: result?.embedToken.token,
+            id: report?.ReportId,
+            embedUrl: report?.EmbedUrl,
+            accessToken: result?.EmbedToken.token,
           };
         },
         (error) => console.error(error)
